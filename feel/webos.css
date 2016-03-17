@@ -1,0 +1,550 @@
+body {
+    position: fixed;
+    height: 768px;
+    width: 1028px;
+    border: 1px solid #2d2d2d;
+}
+
+/* Mandatory Inclusions */
+
+.sm{position:relative;z-index:9999;}
+.sm,.sm ul,.sm li{display:block;list-style:none;margin:0;padding:0;line-height:normal;direction:ltr;text-align:left;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.sm-rtl,.sm-rtl ul,.sm-rtl li{direction:rtl;text-align:right;}
+.sm>li>h1,.sm>li>h2,.sm>li>h3,.sm>li>h4,.sm>li>h5,.sm>li>h6{margin:0;padding:0;}
+.sm ul{display:none;}
+.sm li,.sm a{position:relative;}
+.sm a{display:block;}
+.sm a.disabled{cursor:not-allowed;}
+.sm:after{content:"\00a0";display:block;height:0;font:0px/0 serif;clear:both;visibility:hidden;overflow:hidden;}
+.sm,.sm *,.sm *:before,.sm *:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
+
+@media all {
+	.featherlight-next,
+	.featherlight-previous {
+		display: block;
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		bottom: 0;
+		left: 80%;
+		cursor: pointer;
+		/* preventing text selection */
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		/* IE9 hack, otherwise navigation doesn't appear */
+		background: rgba(0,0,0,0);
+	}
+
+	.featherlight-previous {
+		left: 25px;
+		right: 80%;
+	}
+
+	.featherlight-next:hover,
+	.featherlight-previous:hover {
+		background: rgba(255,255,255,0.25);
+	}
+
+
+	.featherlight-next span,
+	.featherlight-previous span {
+		display: none;
+		position: absolute;
+
+		top: 50%;
+		left: 5%;
+		width: 82%;
+
+		/* center horizontally */
+		text-align: center;
+
+		font-size: 80px;
+		line-height: 80px;
+
+		/* center vertically */
+		margin-top: -40px;
+
+		text-shadow: 0px 0px 5px #fff;
+		color: #fff;
+		font-style: normal;
+		font-weight: normal;
+	}
+	.featherlight-next span {
+		right: 5%;
+		left: auto;
+	}
+
+
+	.featherlight-next:hover span,
+	.featherlight-previous:hover span {
+		display: inline-block;
+	}
+
+	/* Hide navigation while loading */
+	.featherlight-loading .featherlight-previous, .featherlight-loading .featherlight-next {
+		display:none;
+	}
+}
+
+/* Always display arrows on touch devices */
+@media only screen and (max-device-width: 1024px){
+	.featherlight-next:hover,
+	.featherlight-previous:hover {
+		background: none;
+	}
+	.featherlight-next span,
+	.featherlight-previous span {
+		display: block;
+	}
+}
+
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+	.featherlight-next,
+	.featherlight-previous {
+		top: 10px;
+		right: 10px;
+		left: 85%;
+	}
+
+	.featherlight-previous {
+		left: 10px;
+		right: 85%;
+	}
+
+	.featherlight-next span,
+	.featherlight-previous span {
+		margin-top: -30px;
+		font-size: 40px;
+	}
+}
+
+@media all {
+	.featherlight {
+		display: none;
+
+		/* dimensions: spanning the background from edge to edge */
+		position:fixed;
+		top: 0; right: 0; bottom: 0; left: 0;
+		z-index: 2147483647; /* z-index needs to be >= elements on the site. */
+
+		/* position: centering content */
+		text-align: center;
+
+		/* insures that the ::before pseudo element doesn't force wrap with fixed width content; */
+		white-space: nowrap;
+
+		/* styling */
+		cursor: pointer;
+		background: #333;
+		/* IE8 "hack" for nested featherlights */
+		background: rgba(0, 0, 0, 0);
+	}
+
+	/* support for nested featherlights. Does not work in IE8 (use JS to fix) */
+	.featherlight:last-of-type {
+		background: rgba(0, 0, 0, 0.8);
+	}
+
+	.featherlight:before {
+		/* position: trick to center content vertically */
+		content: '';
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		margin-right: -0.25em;
+	}
+
+	.featherlight .featherlight-content {
+		/* make content container for positioned elements (close button) */
+		position: relative;
+
+		/* position: centering vertical and horizontal */
+		text-align: left;
+		vertical-align: middle;
+		display: inline-block;
+
+		/* dimensions: cut off images */
+		overflow: auto;
+		padding: 25px 25px 0;
+		border-bottom: 25px solid transparent;
+
+		/* dimensions: handling large content */
+		margin-left: 5%;
+		margin-right: 5%;
+		max-height: 95%;
+
+		/* styling */
+		background: #fff;
+		cursor: auto;
+
+		/* reset white-space wrapping */
+		white-space: normal;
+	}
+
+	/* contains the content */
+	.featherlight .featherlight-inner {
+		/* make sure its visible */
+		display: block;
+	}
+
+	.featherlight .featherlight-close-icon {
+		/* position: centering vertical and horizontal */
+		position: absolute;
+		z-index: 9999;
+		top: 0;
+		right: 0;
+
+		/* dimensions: 25px x 25px */
+		line-height: 25px;
+		width: 25px;
+
+		/* styling */
+		cursor: pointer;
+		text-align: center;
+		font-family: Arial, sans-serif;
+		background: #fff; /* Set the background in case it overlaps the content */
+		background: rgba(255, 255, 255, 0.3);
+		color: #000;
+	}
+
+
+	.featherlight .featherlight-image {
+		/* styling */
+		width: 100%;
+	}
+
+
+	.featherlight-iframe .featherlight-content {
+		/* removed the border for image croping since iframe is edge to edge */
+		border-bottom: 0;
+		padding: 0;
+	}
+
+	.featherlight iframe {
+		/* styling */
+		border: none;
+	}
+}
+
+/* handling phones and small screens */
+@media only screen and (max-width: 1024px) {
+	.featherlight .featherlight-content {
+		/* dimensions: maximize lightbox with for small screens */
+		margin-left: 10px;
+		margin-right: 10px;
+		max-height: 98%;
+
+		padding: 10px 10px 0;
+		border-bottom: 10px solid transparent;
+	}
+}
+
+.time_circles {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ *	This is all the elements used to house all text used
+ * in time circles
+ **/
+.time_circles > div {
+    position: absolute;
+    text-align: center;
+}
+
+/**
+ *	Titles (Days, Hours, etc)
+ **/
+.time_circles > div > h4 {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Century Gothic', Arial;
+}
+
+/**
+ *	Time numbers, ie: 12
+ **/
+.time_circles > div > span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Century Gothic', Arial;
+    font-size: 300%;
+    margin-top: 0.4em;
+    font-weight: bold;
+}
+
+.iris-picker {
+	display: block;
+	position: relative;
+}
+.iris-picker, .iris-picker * {
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+input + .iris-picker {
+	margin-top: 4px;
+}
+.iris-error {
+	background-color: #ffafaf;
+}
+.iris-border {
+	border-radius: 3px;
+	border: 1px solid #aaa;
+	width: 200px;
+	background-color: #fff;
+}
+.iris-picker-inner {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+.iris-border .iris-picker-inner {
+	top: 10px;
+	right: 10px;
+	left: 10px;
+	bottom: 10px;
+}
+.iris-picker .iris-square-inner {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+}
+.iris-picker .iris-square,
+.iris-picker .iris-slider,
+.iris-picker .iris-square-inner,
+.iris-picker .iris-palette {
+	border-radius: 3px;
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.4);
+	height: 100%;
+	width: 12.5%;
+	float: left;
+	margin-right: 5%;
+}
+.iris-picker .iris-square {
+	width: 76%;
+	margin-right: 10%;
+	position: relative;
+}
+.iris-picker .iris-square-inner {
+	width: auto;
+	margin: 0;
+}
+.iris-ie-9 .iris-square,
+.iris-ie-9 .iris-slider,
+.iris-ie-9 .iris-square-inner,
+.iris-ie-9 .iris-palette {
+	box-shadow: none;
+	border-radius: 0;
+}
+.iris-ie-9 .iris-square,
+.iris-ie-9 .iris-slider,
+.iris-ie-9 .iris-palette {
+	outline: 1px solid rgba(0,0,0,.1);
+}
+.iris-ie-lt9 .iris-square,
+.iris-ie-lt9 .iris-slider,
+.iris-ie-lt9 .iris-square-inner,
+.iris-ie-lt9 .iris-palette {
+	outline: 1px solid #aaa;
+}
+
+.iris-ie-lt9 .iris-square .ui-slider-handle {
+	outline: 1px solid #aaa;
+	background-color: #fff;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+}
+.iris-ie-lt9 .iris-square .iris-square-handle {
+	background: none;
+	border: 3px solid #fff;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+}
+.iris-picker .iris-strip {
+	margin-right: 0;
+	position: relative;
+}
+.iris-picker .iris-strip .ui-slider-handle {
+	position: absolute;
+	background: none;
+	margin: 0;
+	right: -3px;
+	left:  -3px;
+	border: 4px solid #aaa;
+	border-width: 4px 3px;
+	width: auto;
+	height: 6px;
+	border-radius: 4px;
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	opacity: .9;
+	z-index: 5;
+	cursor: ns-resize;
+}
+.iris-strip .ui-slider-handle:before {
+	content: " ";
+	position:absolute;
+	left:   -2px;
+	right:  -2px;
+	top:    -3px;
+	bottom: -3px;
+	border:  2px solid #fff;
+	border-radius: 3px;
+}
+.iris-picker .iris-slider-offset {
+	position: absolute;
+	top: 11px;
+	left: 0;
+	right: 0;
+	bottom: -3px;
+	width: auto;
+	height: auto;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+}
+.iris-picker .iris-square-handle {
+	background: transparent;
+	border: 5px solid #aaa;
+	border-radius: 50%;
+	border-color: rgba(128,128,128,.5);
+	box-shadow:none;
+	width:  12px;
+	height: 12px;
+	position: absolute;
+	left: -10px;
+	top:  -10px;
+	cursor: move;
+	opacity: 1;
+	z-index: 10;
+}
+.iris-picker .ui-state-focus .iris-square-handle {
+	opacity: .8;
+}
+.iris-picker .iris-square-handle:hover {
+	border-color: #999;
+}
+.iris-picker .iris-square-value:focus .iris-square-handle {
+	box-shadow: 0 0 2px rgba(0,0,0,.75);
+	opacity: .8;
+}
+.iris-picker .iris-square-handle:hover::after {
+	border-color: #fff;
+}
+.iris-picker .iris-square-handle::after {
+	position: absolute;
+	bottom: -4px;
+	right:  -4px;
+	left:   -4px;
+	top:    -4px;
+	border: 3px solid #f9f9f9;
+	border-color: rgba(255,255,255,.8);
+	border-radius: 50%;
+	content: " ";
+}
+.iris-picker .iris-square-value {
+	width:  8px;
+	height: 8px;
+	position: absolute;
+}
+.iris-ie-lt9 .iris-square-value, .iris-mozilla .iris-square-value {
+	width: 1px;
+	height: 1px;
+}
+/* Palettes*/
+.iris-palette-container {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+.iris-border .iris-palette-container {
+	left: 10px;
+	bottom: 10px;
+}
+.iris-picker .iris-palette {
+	margin: 0;
+	cursor: pointer;
+}
+
+#miniTip {
+    /* main styles for tooltip */
+    background-color: #f8f5ca;
+	border: 4px solid #eae4b4;
+	color: #927847;
+	font-size: .9em;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+    /* end editing style */
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+    z-index: 99999;
+}
+
+/* title bar style */
+#miniTip_t {
+	background-color: #f5edc2;
+	font-weight: 700;
+	padding: 4px 6px;
+}
+
+/* main content style */
+#miniTip_c { padding: 4px 8px }
+
+
+/* arrow holder, no need to edit */
+#miniTip_a {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* arrow pointing down, change border-top color to change color of the arrow */
+#miniTip .n {
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid #eae4b4;
+	border-bottom: 0;
+}
+
+/* arrow pointing up, change border-bottom color to change color of the arrow */
+#miniTip .s {
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #eae4b4;
+	border-top: 0;
+}
+
+/* arrow pointing left, change border-right color to change color of the arrow */
+#miniTip .e {
+	border-bottom: 8px solid transparent;
+	border-top: 8px solid transparent;
+	border-right: 8px solid #eae4b4;
+	border-left: 0;
+}
+
+/* arrow pointing right, change border-left color to change color of the arrow */
+#miniTip .w {
+	border-bottom: 8px solid transparent;
+	border-top: 8px solid transparent;
+	border-left: 8px solid #eae4b4;
+	border-right: 0;
+}
