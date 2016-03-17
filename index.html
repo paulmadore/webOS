@@ -35,6 +35,30 @@
     </head>
     <body>
         <div id="mainScreen"></div>
-        <div id="bottomBar"></div>
+        <div id="bottomBar">
+            <div id="bottomBarMainMenu">
+                <div id="bottomBarMenu" blass="bottomBarMenu"></div>
+                <a><img src="etc/img/parts/bottomBar/bottomBarIcon.png" class="bottomBarIcon" id="bottomMenu"></a>
+                
+                <script>
+                     $( document ).ready(function() {
+                        if(('#bottomMenu').clicked) {
+                            $('#bottomBarMenu').replaceWith(
+                        
+                           <div><ul id="bottomBarMenu">
+                            
+                                <li id="apps">apps</li>
+                                <li id="games">games</li>
+                                <li id="abt">about</li>
+                                <li id="support">support</li>
+                           
+                           </ul></div>
+                        )
+                     }
+                     else $('#bottomBarMenu').replaceWith('<br/>')
+                     };
+                </script>
+            </div>
+        </div>
     </body>
 </html>

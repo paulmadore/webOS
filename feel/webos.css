@@ -5,6 +5,14 @@ body {
     border: 1px solid #2d2d2d;
 }
 
+.bottomMenuBar {
+    text-align: center;
+    font-family: cardboard;
+    font-size: 21pt;
+    text-shadow: rgb(45, 45, 45);
+    padding: .25in;
+}    
+
 /* Mandatory Inclusions */
 
 .sm{position:relative;z-index:9999;}

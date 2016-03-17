@@ -1,0 +1,12 @@
+#bottomBar {
+    height: 35px;
+    background-color: #44cb87;
+    opacity: 0.25;
+}
+
+#bottomBarMenu {
+    width: 35%;
+    float: right;
+    border-radius: 15pt 15pt 15pt;
+    border: 1px dotted #2d2d2d;
+}

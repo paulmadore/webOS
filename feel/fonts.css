@@ -1,0 +1,122 @@
+@font-face {
+    font-family: 'yeseva';
+    src: url('../fonts/yeseva.eot');
+    src: url('../fonts/yeseva.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/yeseva.woff2') format('woff2'),
+         url('../fonts/yeseva.woff') format('woff'),
+         url('../fonts/yeseva.ttf') format('truetype'),
+         url('../fonts/yeseva.svg#yeseva') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'cardboard';
+    src: url('../fonts/cardboard.eot');
+    src: url('../fonts/cardboard.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/cardboard.woff2') format('woff2'),
+         url('../fonts/cardboard.woff') format('woff'),
+         url('../fonts/cardboard.ttf') format('truetype'),
+         url('../fonts/cardboard.svg#cardboard') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'neuton';
+    src: url('../fonts/neuton.eot');
+    src: url('../fonts/neuton.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/neuton.woff2') format('woff2'),
+         url('../fonts/neuton.woff') format('woff'),
+         url('../fonts/neuton.ttf') format('truetype'),
+         url('../fonts/neuton.svg#neuton') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'serifique';
+    src: url('../fonts/serifique.eot');
+    src: url('../fonts/serifique.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/serifique.woff2') format('woff2'),
+         url('../fonts/serifique.woff') format('woff'),
+         url('../fonts/serifique.ttf') format('truetype'),
+         url('../fonts/serifique.svg#kingthings_serifiqueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'judges';
+    src: url('../fonts/judges.eot');
+    src: url('../fonts/judges.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/judges.woff2') format('woff2'),
+         url('../fonts/judges.woff') format('woff'),
+         url('../fonts/judges.ttf') format('truetype'),
+         url('../fonts/judges.svg#judges') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gabby';
+    src: url('../fonts/gabby.eot');
+    src: url('../fonts/gabby.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gabby.woff2') format('woff2'),
+         url('../fonts/gabby.woff') format('woff'),
+         url('../fonts/gabby.ttf') format('truetype'),
+         url('../fonts/gabby.svg#gabby') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'white';
+    src: url('../fonts/white.eot');
+    src: url('../fonts/white.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/white.woff2') format('woff2'),
+         url('../fonts/white.woff') format('woff'),
+         url('../fonts/white.ttf') format('truetype'),
+         url('../fonts/white.svg#white') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'coving';
+    src: url('../fonts/coving.eot');
+    src: url('../fonts/coving.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/coving.woff2') format('woff2'),
+         url('../fonts/coving.woff') format('woff'),
+         url('../fonts/coving.ttf') format('truetype'),
+         url('../fonts/coving.svg#coving') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'berry';
+    src: url('../fonts/berry.eot');
+    src: url('../fonts/berry.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/berry.woff2') format('woff2'),
+         url('../fonts/berry.woff') format('woff'),
+         url('../fonts/berry.ttf') format('truetype'),
+         url('../fonts/berry.svg#beryliumregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'serif-beau';
+    src: url('../fonts/serif-beau.eot');
+    src: url('../fonts/serif-beau.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/serif-beau.woff2') format('woff2'),
+         url('../fonts/serif-beau.woff') format('woff'),
+         url('../fonts/serif-beau.ttf') format('truetype'),
+         url('../fonts/serif-beau.svg#serif-beau') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'gothic';
+    src: url('../fonts/gothic.eot');
+    src: url('../fonts/gothic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/gothic.woff2') format('woff2'),
+         url('../fonts/gothic.woff') format('woff'),
+         url('../fonts/gothic.ttf') format('truetype'),
+         url('../fonts/gothic.svg#gothic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
